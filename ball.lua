@@ -11,6 +11,8 @@ function Ball:load()
    self.speed = 200
    self.xVel = -self.speed
    self.yVel = 0
+
+   
 end
 
 
@@ -27,6 +29,7 @@ function Ball:collide()
       local middlePlayer = Player.y + Player.height / 2
       local collisionPosition = middleBall - middlePlayer
       self.yVel = collisionPosition * 5
+      Sounds.blip:play()
       if (self.speed<0)
          then
          self.speed=self.speed-10
@@ -41,6 +44,7 @@ function Ball:collide()
       local middleplayer2 = Player2.y + Player2.height / 2
       local collisionPosition = middleBall - middleplayer2
       self.yVel = collisionPosition * 5
+      Sounds.blip:play()
       if (self.speed<0)
          then
          self.speed=self.speed-10

@@ -3,11 +3,12 @@ require("player2")
 require("ball")
 --require("ai")
 
-
+Sounds={}
 function love.load()
    Player:load()
    Player2:load()
    Ball:load()
+   Sounds.blip=love.audio.newSource("assets/sounds/ballsound.wav","static")
    --AI:load()
 end
 
